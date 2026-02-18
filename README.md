@@ -1,6 +1,6 @@
 # SLR-Extract
 
-An end-to-end pipeline for **Systematic Literature Review (SLR) extraction** from academic PDF papers. The system uses Mistral's OCR API to extract text and figures, stores them in an OpenAI Vector Store, and then uses GPT models to answer structured research questions for each paper.
+An end-to-end pipeline for **Systematic Literature Review (SLR) extraction** from academic PDF papers. The system uses Mistral's OCR API to extract text and figures, stores them in an OpenAI Vector Store, and then uses GPT models to answer structured feature extraction questions for each paper.
 
 ---
 

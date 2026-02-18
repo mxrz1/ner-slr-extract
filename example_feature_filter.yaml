@@ -1,0 +1,28 @@
+# Example feature filter YAML file for export_to_excel.py
+# List the feature IDs you want to include in the Excel output
+
+features:
+  - "A_Biblio.Innovative Approach"
+  - "B_Overview.Generic Overview"
+  - "A_Biblio.Approach name"
+  - "B_Overview.High-level architecture description"
+  - "B_Overview.Description"
+  - "D_LM.LM-based"
+  - "E_TaskRepresentation.Embeddings/Features  used"
+  - "C_Components.Deep-learning components"
+  - "C_Components.Statistical learners"
+  - "C_Components.Rule-based components"
+  - "C_Components.Algorithms"
+  - "C_Components.Reinforcement Learning"
+  - "C_Components.Prompt engineering"
+  - "D_LM.LM integration"
+  - "D_LM.Reasoning Language Model"
+  - "D_LM.Context window"
+  - "K_Capability.Entity types"
+  - "F_Knowledge.Knowledge base"
+  - "F_Knowledge.Knowledg/cle graph"
+  - "E_TaskRepresentation.Type of task"
+  - "G_LangStrategy.Multilingual"
+  - "K_Capability.Relation extraction"
+  - "K_Capability.CTI sub-field/Research objective"
+  - "J_ReproCode.Code available"

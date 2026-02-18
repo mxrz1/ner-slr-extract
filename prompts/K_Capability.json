@@ -1,0 +1,24 @@
+{
+  "block": "K_Capability",
+  "features": [
+    {
+      "name": "Entity types",
+      "question": "Which entity types are recognised?",
+      "guideline": "- **Synonyms:** Treat *entity types*, *labels*, *tags*, *categories*, and *classes* as **equivalent** for extraction.\n- **BIO/IOB handling:** **Strip** `B-`, `I-`, `S-`, `E-` prefixes and **exclude** `O`, `PAD`, `UNK`, or pipeline markers. Report **base types** only.\n- **Per-dataset separation:** If multiple datasets are used, **list entity types per dataset separately**; **do not merge** sets.\n- **Final model tie-in:** In **Answer**, report the **entity types predicted by the final/best CTI-NER model**. In the **Long explanation**, include a **per-dataset table** and note differences across datasets.\n- **Provenance:** For each type (or set), state **Provenance = STIX 2.1 / Author-defined / Other standard (name)**. If mixed, annotate per type when stated.\n- **Canonicalization:** Preserve authors’ **exact names/casing**. If aliases/variants appear, choose a **canonical label** and list aliases in **notes**.\n- **No guessing sets:** Do **not** infer new types from background knowledge. You may add brief contextual clarifications about standards as **`[Background note] <≤25 words>`** (non-evidential), but **do not** use them to add or alter types.\n- **Nested/hierarchical:** If nesting is reported, represent **parent → child** relations in the **Long explanation**; otherwise output a flat list.\n- If authors explicitly state that the **final model** unifies types across datasets, add a **“Final model label set”** subsection with the unified list and a supporting quote.",
+      "model": "gpt-5-mini",
+      "reasoning_effort": "medium"
+    },
+    {
+      "name": "Relation extraction",
+      "question": "Does the model also extract relations between entities?",
+      "guideline": "Yes/No + Brief explanation of how it is done"
+    },
+    {
+      "name": "CTI sub-field/Research objective",
+      "question": "Which CTI use-case? What problem does the approach solve?",
+      "guideline": "Record what the NER approach is intended to accomplish (E.g. log analysis, news article analysis, unstructured CTI data into STIX or MISP format, create knowledge graph, make NER more performant in some ascept).",
+      "model": "gpt-5-nano",
+      "reasoning_effort": "medium"
+    }
+  ]
+}

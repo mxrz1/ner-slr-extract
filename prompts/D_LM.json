@@ -1,0 +1,33 @@
+{
+  "block": "D_LM",
+  "features": [
+    {
+      "name": "LM-based",
+      "question": "Does the system rely on a language model (LM)? Name it.",
+      "guideline": "Look for e.g. BERT, Mistral, Meta (Llama) or OpenAI (e.g. GPT-4o) models. Note links to their repositories (e.g. GitHub, Huggingface). Name all the LMs evaluated and state which one is the best. Do not just write the general term (e.g.) but its precise variation (e.g. bert-base-cased).",
+      "model": "gpt-5-nano",
+      "reasoning_effort": "medium"
+    },
+    {
+      "name": "LM integration",
+      "question": "How is the language model (LM) integrated (prompting, fine-tune, embeddings)?",
+      "guideline": "- **Exhaustive listing:** If **multiple integrations** are used, **list them all**. In **Answer**, list integrations used by the **final/best CTI-NER model first**. Place alternatives under **“Not selected integrations”** in the Long explanation (with evidence).\n- **Normalized categories (illustrative, not limiting):** **Prompting** (zero/one/few-shot, tool use/RAG), **Embeddings** (LM used as features/retriever), **Fine-tuning** (full, **LoRA/QLoRA**, adapters, prefix/prompt tuning), **Distillation/Teacher–Student**, **Post-processing** (reranking, calibration).\n- **How it was done (brief):** For each integration, add a **parenthetical clarifier** with concrete method/settings **if stated**, e.g.:  \n  - `LoRA fine-tune (r=16, α=32, bf16)`  \n  - `Prompting (few-shot, 8-shot)`  \n  - `Embeddings (BERT-base as features)`  \n  - `RAG (BM25+Embeddings retriever)`\n- **Two-pass recall sweep:** Scan **Methods/Implementation/Results** and **Appendix tables**, then perform a **second pass** to catch missed integrations.\n- **Scope boundary:** Do **not** count non-LM deep components (e.g., CNN/LSTM/CRF) as LM integrations—report them under deep-learning components. If the LM is used **only** for **data augmentation**, state **“Data augmentation only (not integrated at inference)”**.\n\n**Output alignment**  \nConform **exactly** to the global per-field format (**Answer; Explanation & key points; Long explanation / description; Evidence**).\n\n**Expected content**\n- **Answer:** Concise, comma-separated list of integrations for the **final/best** model, each with a brief parenthetical clarifier (if stated).  \n  - Example: `LoRA fine-tune (r=16), Embeddings (BERT-base as features)`  \n- **Explanation & key points:** One sentence summarizing **all integrations found**, where they occur in the pipeline, and any **special settings**.  \n- **Long explanation / description:**  \n  - **Not selected integrations:** list other tested integrations with evidence.  \n  - Briefly explain how each integration operates in this approach (add **[Background note] <≤25 words>** only if the paper names a method without explanation; background is not evidence).  \n- **Evidence:** One quote per integration (≤120 chars), from **body text or Markdown tables**.",
+      "model": "gpt-5-nano",
+      "reasoning_effort": "medium"
+    },
+    {
+      "name": "Reasoning Language Model",
+      "question": "Is a reasoning-enhanced langauge model (LM) used? Name it.",
+      "guideline": "E.g. DeepSeek R1, OpenAI o3",
+      "model": "gpt-5-nano",
+      "reasoning_effort": "medium"
+    },
+    {
+      "name": "Context window",
+      "question": "What input token limit is supported?",
+      "guideline": "- **Scope:** Report the **inference-time input token limit** used **for CTI-NER**. Ignore training-time truncation, batch sizes, or non-NER tasks.\n- **Normalization:** Return an **integer number of tokens** (no units) as the **Answer**. If multiple limits are reported, choose the **bottleneck** relevant to **CTI-NER** on the **final/best architecture**.\n- **Chunking:** If chunking/sliding windows are used, the **Answer** is the **per-chunk token limit**. In the **Long explanation**, note that longer documents are handled via chunking.\n- **Granularity:** If both document- and sentence-level limits appear, choose the limit **actually used at inference** for **CTI-NER**.\n\n**Not reported handling**  \nIf no limit is stated in the provided context, set **Answer = `Not reported`**.  \nAdd a **`[Background estimate]`** (non-evidential) in **Explanation & key points** indicating plausible limits based on the named architecture; expand the reasoning, assumptions, and typical ranges in the **Long explanation**. Background content **must not** alter the Answer.\n.",
+      "model": "gpt-5-nano",
+      "reasoning_effort": "medium"
+    }
+  ]
+}

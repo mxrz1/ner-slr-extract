@@ -1,0 +1,17 @@
+{
+  "block": "G_LangStrategy",
+  "features": [
+    {
+      "name": "Multilingual",
+      "question": "Which languages are supported?",
+      "guideline": "List ISO codes or names; “English-only” if unspecified. Can be potentially  found out on which dataset the LLM was trained and/or which dataset was unsed for trianing.",
+      "model": "gpt-5-nano",
+      "reasoning_effort": "medium"
+    },
+    {
+      "name": "Training strategy",
+      "question": "How is training (e.g. RLHF, etc.) done? Why that way?",
+      "guideline": "- **Scope:** Describe the **training strategy for the final/best CTI-NER model** only. Add a short subsection **“Not selected training variants”** listing strategies tested but not used.\n- **Non-exhaustive examples (illustrative, not limiting):** losses (CRF, focal, Dice), class-imbalance handling (class weights, re-sampling), RLHF, optimization/scheduler, regularization, early stopping.\n- **Specialty-first:** Prioritize **non-standard or decisive** choices.\n- **Breadth → depth:** First **enumerate** all reported training components. Then, for each component, provide: **What** (method) → **Why** (author-stated rationale) → **How** (brief mechanism) → **Where it applies** (final model vs. ablations).\n- **Background note:** If a method is only **named** without explanation, add a concise clarification labeled **`[Background note] <≤25 words>`**. This is **not evidence** and must not change the Answer.\n- **Not reported handling:** If a training choice is not stated, keep **Answer = `Not reported`**. You may add a non-evidential **`[Background note]`** in *Explanation & key points* and elaborate in *Long explanation*."
+    }
+  ]
+}

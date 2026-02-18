@@ -1,0 +1,30 @@
+{
+  "block": "L_Context",
+  "features": [
+    {
+      "name": "Research gaps",
+      "question": "Which gaps do authors identify?",
+      "guideline": "List them."
+    },
+    {
+      "name": "Limitations",
+      "question": "Author-stated limitations?",
+      "guideline": ""
+    },
+    {
+      "name": "Challenges",
+      "question": "What challenges were encountered?",
+      "guideline": ""
+    },
+    {
+      "name": "Strengths",
+      "question": "Claimed advantages?",
+      "guideline": ""
+    },
+    {
+      "name": "Findings",
+      "question": "What are the findings?",
+      "guideline": "With that I mean findings that are different to the ones in the evaluation. Example: The authors found out that vulnerabilities are usually found 2 weeks earlier in hacker forums than in vulnerability reports.But could also be something completly different."
+    }
+  ]
+}

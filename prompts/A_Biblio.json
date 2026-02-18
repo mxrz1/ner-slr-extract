@@ -1,0 +1,20 @@
+{
+  "block": "A_Biblio",
+  "features": [
+    {
+      "name": "Approach name",
+      "question": "How do the authors of the paper name their framework, method or tool?",
+      "guideline": "I am focused on the name of the tool in general. If there are multiple tool names, e.g. one for the framework and one for the NER approach write both down."
+    },
+    {
+      "name": "Additional notes",
+      "question": "Any other brief notes worth capturing?",
+      "guideline": "This feature captures note worthy parts that are unique quirks or things that are not captured by other catories. Other categories capture information about  Architecture, Models, Appraoches in detail, Knowledge Bases/Graphs, Evaluation approach, Datasets used, Strengths/Limitations/Objectives of the papers and NER features. Do not add information about these things, except they are really extravagant. An example (but not limited to) could be that they share an insight about how a specific part of their approach is per design good for NER or perform beter with this part/tool/model/architecture. Another example would be that they explain why they say longer context windows are not necessary."
+    },
+    {
+      "name": "Innovative Approach",
+      "question": "Does the paper propose on how to extract named entities or does it use only existing approaches?",
+      "guideline": "Yes/No + explanation."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "block": "J_ReproCode",
+  "features": [
+    {
+      "name": "Code available",
+      "question": "Is source code shared? Give URL.",
+      "guideline": "Yes/No + URL (usually on GitHub)."
+    },
+    {
+      "name": "Language & frameworks",
+      "question": "Primary programming stack?",
+      "guideline": "- **Scope:** Report the **primary programming stack for the final/best CTI-NER implementation** only. Place prototypes or alternatives under **“Not selected / prototypes”** in the Long explanation.\n- **Non-exhaustive examples (illustrative, not limiting):** e.g., Python, Java, **PyTorch**, **TensorFlow**, **Hugging Face Transformers**, spaCy, NLTK, Flair, Stanza, Apache OpenNLP.\n- **Canonicalization & dedup:** Use **canonical names** (e.g., “Hugging Face Transformers”, “PyTorch”, “TensorFlow”). **Deduplicate** synonyms/variants (e.g., “HF transformers” → “Hugging Face Transformers”).\n- **Consistency rule:** If **any** stack items are evidenced, **Answer must not be `Not reported`**. If **none** are evidenced, set **Answer = `Not reported`** and list **no items**.\n- **Inference policy:** If a named **library implies a language** (e.g., Apache OpenNLP ⇒ Java) but the language is **not explicitly stated**, include the **library** in **Answer** and add the language only as a **`[Background note]`** in *Explanation & key points* (and elaborate in *Long explanation*). **Do not** present inferred items as evidence.\n- **Exclusions:** Omit minor utilities (plotting/logging) unless authors claim they are core to NER. Include **versions** only if stated.\n- **Not selected / prototypes (if any):**  List alternative stacks tested but not used for final results, each with an evidence quote.."
+    },
+    {
+      "name": "Execution platform",
+      "question": "Declared hardware/software environment?",
+      "guideline": "- **Scope:** Report the **hardware/accelerators**, **drivers/toolkits**, and **operating system** used for the **final/best CTI-NER results**. Place alternatives under **“Not selected environments”** in the Long explanation.\n- **Exclusions:** **Do not** list programming languages or ML libraries/frameworks (e.g., Python, PyTorch, Transformers, spaCy); those belong to the **Primary programming stack** feature.\n- **Canonicalization:** Use canonical names + versions (e.g., **NVIDIA A100 80GB**, **CUDA 12.2**, **cuDNN 9**, **Ubuntu 22.04**, **Linux kernel 6.5**, **Windows 11 23H2**, **ROCm 6.0**).\n- **Final model tie-in:** Prefer the environment **used to produce the reported CTI-NER results**. Mention other machines/cloud instances in **Long explanation → “Not selected environments”** with supporting quotes.\n- **Consistency rule:** If **any** environment items are evidenced, **Answer must not be `Not reported`**. If **none** are evidenced, set **Answer = `Not reported`** and list **no items**.\n- **Exclusions (further):** Omit hyperparameters, batch size, epochs, and utilization unless the paper claims they **define** the environment."
+    }
+  ]
+}
